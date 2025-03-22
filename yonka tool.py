@@ -1,5 +1,5 @@
 def load_valid_keys(file_path="keys.py"):
-    """Load valid keys from a file."""
+    
     try:
         with open(file_path, "r") as file:
             return {line.strip() for line in file}  # Store keys in a set
@@ -8,7 +8,7 @@ def load_valid_keys(file_path="keys.py"):
         return set()
 
 def check_key():
-    """Ask user for a key and validate it."""
+    
     valid_keys = load_valid_keys()
     user_key = input("✅Enter your access key: ").strip()
 
@@ -19,11 +19,11 @@ def check_key():
         print("❌ Invalid Key. Access Denied.")
         return False
 
-# Run key check before allowing access to the program
+m
 if not check_key():
-    exit()  # Stop the program if key is invalid
+    exit()  
 
-# Your main program logic goes here
+
 print("🎉 You have entered the program!")
 
 from colorama import Fore
