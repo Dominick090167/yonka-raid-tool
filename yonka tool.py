@@ -1,8 +1,8 @@
 def load_valid_keys(file_path="keys.py"):
-    
+    """Load valid keys from a file."""
     try:
         with open(file_path, "r") as file:
-            return {line.strip() for line in file}  # Store keys in a set
+            return {line.strip() for line in file}  
     except FileNotFoundError:
         print("Key file not found! Make sure 'keys.txt' exists.")
         return set()
@@ -19,7 +19,7 @@ def check_key():
         print("❌ Invalid Key. Access Denied.")
         return False
 
-m
+
 if not check_key():
     exit()  
 
@@ -194,12 +194,14 @@ class Render:
         edges = ["─", "╭", "│", "╰", "╯", "╮", "»", "«"]
         title = f"""{' '*41}{Fore.RESET} Loaded ‹{self.background}{len(tokens)}{Fore.RESET}› tokens | Loaded ‹{self.background}{len(proxies)}{Fore.RESET}> proxies
 
-{' «01» Joiner            «07» Token Formatter    «13» Onliner           «19» Call Spammer     │'.center(self.size)}
-{' «02» Leaver            «08» Button Click       «14» Voice Raper       «20» Bio Change       │'.center(self.size)}
-{' «03» Spammer           «09» Accept Rules       «15» Change Nick       «21» Voice Joiner     │'.center(self.size)}
-{' «04» Token Checker     «10» Guild Check        «16» Thread Spammer    «22» Onboard Bypass   │'.center(self.size)}
-{' «05» Emoji Reaction    «11» Friend Spam        «17» Typer             «23» Dm Spammer       │'.center(self.size)}
-{│ «06» ???               «12» ???                «18» ???               «24» Exit             │'.center(self.size)}
+{'╭─────────────────────────────────────────────────────────────────────────────────────────────╮'.center(self.size)}
+{'│ «01» Joiner            «07» Token Formatter    «13» Onliner           «19» Call Spammer     │'.center(self.size)}
+{'│ «02» Leaver            «08» Button Click       «14» Voice Raper       «20» Bio Change       │'.center(self.size)}
+{'│ «03» Spammer           «09» Accept Rules       «15» Change Nick       «21» Voice Joiner     │'.center(self.size)}
+{'│ «04» Token Checker     «10» Guild Check        «16» Thread Spammer    «22» Onboard Bypass   │'.center(self.size)}
+{'│ «05» Emoji Reaction    «11» Friend Spam        «17» Typer             «23» Dm Spammer       │'.center(self.size)}
+{'│ «06» ???               «12» ???                «18» ???               «24» Exit             │'.center(self.size)}
+{'╰─────────────────────────────────────────────────────────────────────────────────────────────╯'.center(self.size)}
 """
         for edge in edges:
             title = title.replace(edge, f"{self.background}{edge}{C['blue']}")
